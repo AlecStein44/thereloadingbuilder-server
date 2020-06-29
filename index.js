@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
       .where({type: 'bullet'})
       .then(typeData => {
           if (typeData.length === 0) {
-              request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='bullet'`, headers: headers}, function (error, response, body) {
+              request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='Shooting > Reloading > Reloading Bullets'`, headers: headers}, function (error, response, body) {
                   if (!error && response.statusCode == 200) {
                       
                       let newItems = JSON.parse(body)
@@ -71,7 +71,7 @@ app.get('/case', (req, res) => {
     .where({type: 'case'})
     .then(typeData => {
         if (typeData.length === 0) {
-            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='case'`, headers: headers}, function (error, response, body) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Rifle Brass'`, headers: headers}, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
                     
                     let newItems = JSON.parse(body)
@@ -102,7 +102,7 @@ app.get('/case', (req, res) => {
       .where({type: 'powder'})
       .then(typeData => {
           if (typeData.length === 0) {
-            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='OPTICS'`, headers: headers}, function (error, response, body) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Rifle Powder'`, headers: headers}, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
                     let newBody = JSON.parse(body)
                     let newItems = []
@@ -138,7 +138,7 @@ app.get('/case', (req, res) => {
       .where({type: 'primer'})
       .then(typeData => {
           if (typeData.length === 0) {
-            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Nylon primer'`, headers: headers}, function (error, response, body) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Powder/Caps'`, headers: headers}, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
                     
                     let newItems = JSON.parse(body)
@@ -169,7 +169,7 @@ app.get('/case', (req, res) => {
       .where({type: 'press'})
       .then(typeData => {
           if (typeData.length === 0) {
-            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='presss'`, headers: headers}, function (error, response, body) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='Shooting > Reloading > Reloading Presses & Press Kits'`, headers: headers}, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
                     
                     let newItems = JSON.parse(body)
@@ -199,7 +199,7 @@ app.get('/case', (req, res) => {
       .where({type: 'dies'})
       .then(typeData => {
           if (typeData.length === 0) {
-            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='SHOOTING/GUN ACCESSORIES'`, headers: headers}, function (error, response, body) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='Shooting > Reloading > Reloading Dies'`, headers: headers}, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
                     
                     let newItems = JSON.parse(body)
@@ -230,7 +230,7 @@ app.get('/case', (req, res) => {
       .where({type: 'shellholder'})
       .then(typeData => {
           if (typeData.length === 0) {
-            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='shellholder Package'`, headers: headers}, function (error, response, body) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Shellholders'`, headers: headers}, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
                     
                     let newItems = JSON.parse(body)
@@ -254,19 +254,19 @@ app.get('/case', (req, res) => {
       })
   })
 
-  app.get('/kits', (req, res) => {
+  app.get('/primingtool', (req, res) => {
     db
       .select('*')
       .from('types')
-      .where({type: 'kits'})
+      .where({type: 'primingtool'})
       .then(typeData => {
           if (typeData.length === 0) {
-            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='ARCHERY'`, headers: headers}, function (error, response, body) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Priming Tools'`, headers: headers}, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
                     let newBody = JSON.parse(body)
                     let newItems = []
                    for(let i = 0; i < newBody.Items.length; i++) {
-                        if(newBody.Items[i].Name.includes('kitss')) {
+                        if(newBody.Items[i].Name.includes('primingtools')) {
                             newItems.push(newBody.Items[i])
                         }
                     }
@@ -275,7 +275,7 @@ app.get('/case', (req, res) => {
                     console.log('Get Was Successful')
                     db('types')
                                 .insert([{
-                                    type: 'kits',
+                                    type: 'primingtool',
                                     data: JSON.stringify(newBody)
                                 }])
                                 .catch(error => {
@@ -297,7 +297,7 @@ app.get('/case', (req, res) => {
       .where({type: 'powdermes'})
       .then(typeData => {
           if (typeData.length === 0) {
-            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Fixed Blade'`, headers: headers}, function (error, response, body) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='Shooting > Reloading > Powder Handling'`, headers: headers}, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
                     let newBody = JSON.parse(body)
                     let newItems = []
@@ -333,7 +333,7 @@ app.get('/case', (req, res) => {
       .where({type: 'scale'})
       .then(typeData => {
           if (typeData.length === 0) {
-            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='ARCHERY'`, headers: headers}, function (error, response, body) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Powder Measures & Scales'`, headers: headers}, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
                     
                     let newItems = JSON.parse(body)
@@ -364,7 +364,7 @@ app.get('/case', (req, res) => {
       .where({type: 'calipers'})
       .then(typeData => {
           if (typeData.length === 0) {
-            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Caps'`, headers: headers}, function (error, response, body) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Calipers'`, headers: headers}, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
                     
                     let newItems = JSON.parse(body)
@@ -395,7 +395,7 @@ app.get('/case', (req, res) => {
       .where({type: 'casecleaner'})
       .then(typeData => {
           if (typeData.length === 0) {
-            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Masks'`, headers: headers}, function (error, response, body) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Case Cleaning & Prep'`, headers: headers}, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
                     
                     let newItems = JSON.parse(body)
@@ -426,7 +426,7 @@ app.get('/case', (req, res) => {
       .where({type: 'casetrimmer'})
       .then(typeData => {
           if (typeData.length === 0) {
-            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='casetrimmers'`, headers: headers}, function (error, response, body) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Case Cleaning & Prep'`, headers: headers}, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
                     
                     let newItems = JSON.parse(body)
@@ -457,7 +457,7 @@ app.get('/case', (req, res) => {
       .where({type: 'caselube'})
       .then(typeData => {
           if (typeData.length === 0) {
-            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='RH APPAREL'`, headers: headers}, function (error, response, body) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='Shooting > Reloading > Case Preparation'`, headers: headers}, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
                     let newBody = JSON.parse(body)
                     let newItems = []
@@ -493,12 +493,12 @@ app.get('/case', (req, res) => {
       .where({type: 'casechamf'})
       .then(typeData => {
           if (typeData.length === 0) {
-            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='casechamf'`, headers: headers}, function (error, response, body) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Case Cleaning & Prep'`, headers: headers}, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
                     let newBody = JSON.parse(body)
                     let newItems = []
                    for(let i = 0; i < newBody.Items.length; i++) {
-                        if(newBody.Items[i].Name.includes('Hunting casechamf')) {
+                        if(newBody.Items[i].Name.includes('casechamf')) {
                             newItems.push(newBody.Items[i])
                         }
                     }
@@ -529,7 +529,7 @@ app.get('/case', (req, res) => {
       .where({type: 'flashhole'})
       .then(typeData => {
           if (typeData.length === 0) {
-            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Leg flashhole'`, headers: headers}, function (error, response, body) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Case Cleaning & Prep'`, headers: headers}, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
                     
                     let newItems = JSON.parse(body)
@@ -560,7 +560,7 @@ app.get('/case', (req, res) => {
       .where({type: 'primerpocket'})
       .then(typeData => {
           if (typeData.length === 0) {
-            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name~'Wool primerpockets'`, headers: headers}, function (error, response, body) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name~'Primer Pocket'`, headers: headers}, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
                     
                     let newItems = JSON.parse(body)
@@ -591,7 +591,7 @@ app.get('/bulletpuller', (req, res) => {
       .where({type: 'bulletpuller'})
       .then(typeData => {
           if (typeData.length === 0) {
-            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Labels='Hunting'`, headers: headers}, function (error, response, body) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name~'Bullet Puller'`, headers: headers}, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
                     
                     let newItems = JSON.parse(body)
@@ -622,7 +622,7 @@ app.get('/bulletpuller', (req, res) => {
       .where({type: 'comparator'})
       .then(typeData => {
           if (typeData.length === 0) {
-            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Manufacturer='Mystery Ranch'`, headers: headers}, function (error, response, body) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name~'Bullet Comparator'`, headers: headers}, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
                    
                     let newItems = JSON.parse(body)
@@ -653,7 +653,7 @@ app.get('/bulletpuller', (req, res) => {
       .where({type: 'seating'})
       .then(typeData => {
           if (typeData.length === 0) {
-            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name~'Binocular Holder'`, headers: headers}, function (error, response, body) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name~'OAL Gauges'`, headers: headers}, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
                     
                     let newItems = JSON.parse(body)
@@ -684,7 +684,7 @@ app.get('/bulletpuller', (req, res) => {
       .where({type: 'headgauge'})
       .then(typeData => {
           if (typeData.length === 0) {
-            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Category='Camping  >  comparators %26 Bags  >  Hydration Packs'`, headers: headers}, function (error, response, body) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name~'Headspace Gauge'`, headers: headers}, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
                     
                     let newItems = JSON.parse(body)
@@ -715,7 +715,7 @@ app.get('/bulletpuller', (req, res) => {
       .where({type: 'concentricity'})
       .then(typeData => {
           if (typeData.length === 0) {
-            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name~'Binoculars'`, headers: headers}, function (error, response, body) {
+            request({url: `${url}/Mediapartners/IRSYkqTyNep22276244pB9TuBUoBytYTN1/Catalogs/ItemSearch?Query=Name~'Concentricity Tool'`, headers: headers}, function (error, response, body) {
                 if (!error && response.statusCode == 200) {
                     
                     let newItems = JSON.parse(body)
